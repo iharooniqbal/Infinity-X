@@ -152,4 +152,18 @@ footer{
     background:rgba(255,255,255,.1);
     transform:translateX(5px)
   }
+  /* ===== MOBILE FIX FOR SERVICE CARDS ===== */
+.cards{
+  flex-direction:column;
+  align-items:center;
+}
+
+.card{
+  width:90%;
+  max-width:350px;
+  margin:0 auto;
+}
+.cards{
+  padding:0 15px;
+}
 }
