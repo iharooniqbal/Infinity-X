@@ -102,7 +102,7 @@ section:first-of-type{padding-top:calc(140px + 60px)}
 /* ===== FOOTER ===== */
 footer{
   position:fixed;bottom:0;left:0;width:100%;
-  padding:20px;text-align:center;
+  padding:0px;text-align:center;
   background:rgba(0,0,0,.65);backdrop-filter:blur(10px);
   z-index:999;box-shadow:0 -5px 20px rgba(0,0,0,.3)
 }
