@@ -1,43 +1,88 @@
-```html
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Infinity X - Contact</title>
+
 <link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
 </head>
+
 <body>
+
+<!-- Custom Cursor -->
 <div class="cursor"></div>
-<header>
-  <div class="logo">Infinity X</div>
 
-  <!-- HAMBURGER -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<!-- 3D Background -->
+<div id="three-container"></div>
 
-  <nav id="navMenu">
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="about.html"><i class="fas fa-user"></i> About</a>
-    <a href="services.html"><i class="fas fa-briefcase"></i> Services</a>
-    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-  </nav>
+
+<!-- HEADER -->
+<header class="glass">
+
+<div class="logo">Infinity X</div>
+
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="navMenu">
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<a href="about.html"><i class="fas fa-user"></i> About</a>
+<a href="services.html"><i class="fas fa-briefcase"></i> Services</a>
+<a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+
 </header>
 
-<section class="contact" id="contact">
-  <h2>Let’s Build Something Legendary</h2>
-  <button class="btn">Start Now</button>
+
+<!-- CONTACT SECTION -->
+<section class="hero contact-section">
+
+<h1>Contact Infinity X</h1>
+
+<p>Let's build something extraordinary together.</p>
+
+<div class="contact-container">
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea placeholder="Your Message" rows="5" required></textarea>
+
+<button type="submit" class="btn">Send Message</button>
+
+</form>
+
+</div>
+
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Infinity X. Crafted with precision.</p>
+
+<p>© 2026 Infinity X. Crafted with precision.</p>
+
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
