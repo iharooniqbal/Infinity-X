@@ -1,37 +1,43 @@
-// ==========================
+// ========================== 
 // CUSTOM CURSOR SMOOTH ANIMATION
 // ==========================
 const cursor = document.querySelector('.cursor');
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
 if (cursor) {
-  let mouseX = 0, mouseY = 0, posX = 0, posY = 0, speed = 0.15;
+  if (isMobile) {
+    cursor.style.display = 'none'; // Hide cursor on touch devices
+  } else {
+    let mouseX = 0, mouseY = 0, posX = 0, posY = 0, speed = 0.15;
 
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
 
-  function animateCursor() {
-    posX += (mouseX - posX) * speed;
-    posY += (mouseY - posY) * speed;
-    cursor.style.left = posX + 'px';
-    cursor.style.top = posY + 'px';
-    requestAnimationFrame(animateCursor);
+    function animateCursor() {
+      posX += (mouseX - posX) * speed;
+      posY += (mouseY - posY) * speed;
+      cursor.style.left = posX + 'px';
+      cursor.style.top = posY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    const hoverTargets = document.querySelectorAll('a, .btn, .card, .contact-form button');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+        cursor.style.background = 'rgba(0, 245, 255, 0.3)';
+        cursor.style.borderColor = '#00f5ff';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.background = 'transparent';
+        cursor.style.borderColor = '#00f5ff';
+      });
+    });
   }
-  animateCursor();
-
-  const hoverTargets = document.querySelectorAll('a, .btn, .card, .contact-form button');
-  hoverTargets.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-      cursor.style.background = 'rgba(0, 245, 255, 0.3)';
-      cursor.style.borderColor = '#00f5ff';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursor.style.background = 'transparent';
-      cursor.style.borderColor = '#00f5ff';
-    });
-  });
 }
 
 // ==========================
@@ -79,12 +85,16 @@ if (container) {
   );
   camera.position.z = 50;
 
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isMobile });
+  renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
   renderer.setSize(window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
 
+  // Adjust particle/cube count for mobile
+  const particleCount = isMobile ? 50 : 200;
+  const cubeCount = isMobile ? 3 : 10;
+
   // Particles
-  const particleCount = 200;
   const particles = new THREE.BufferGeometry();
   const positions = [];
   for (let i = 0; i < particleCount; i++) {
@@ -94,10 +104,7 @@ if (container) {
       (Math.random() - 0.5) * 200
     );
   }
-  particles.setAttribute(
-    'position',
-    new THREE.Float32BufferAttribute(positions, 3)
-  );
+  particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
   const particleMaterial = new THREE.PointsMaterial({
     color: 0x00f5ff,
     size: 1.5,
@@ -115,7 +122,7 @@ if (container) {
     opacity: 0.4
   });
   const cubes = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < cubeCount; i++) {
     const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
     cube.position.set(
       (Math.random() - 0.5) * 100,
