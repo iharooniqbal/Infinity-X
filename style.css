@@ -214,3 +214,20 @@ footer{
   /* MOBILE HERO */
   .hero h1{font-size:36px;line-height:1.2}
 }
+
+.service-btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#00ffff;
+color:#000;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+transition:0.3s;
+}
+
+.service-btn:hover{
+background:#00c3ff;
+transform:scale(1.05);
+}

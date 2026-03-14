@@ -1,0 +1,90 @@
+/* GLOBAL */
+html, body{
+height:100%;
+margin:0;
+font-family:Arial, sans-serif;
+background:#0f172a;
+color:white;
+}
+
+/* HEADER */
+header{
+background:#020617;
+padding:15px;
+text-align:center;
+position:relative;
+z-index:10;
+}
+
+/* TOP CONTROLS */
+.top-controls{
+margin-top:10px;
+}
+
+select,input,button{
+padding:8px;
+margin:5px;
+border:none;
+border-radius:5px;
+}
+
+button{
+background:#2563eb;
+color:white;
+cursor:pointer;
+}
+
+/* MAIN DASHBOARD LAYOUT */
+.dashboard{
+display:flex;
+height:calc(100vh - 90px); /* subtract header height */
+}
+
+/* MAP */
+#map{
+flex:3;
+height:100%;
+width:100%;
+}
+
+/* SIDE PANEL */
+.sidepanel{
+flex:1;
+padding:20px;
+background:#111;
+color:white;
+overflow-y:auto;
+}
+
+/* COUNTRY DATA */
+#countryData{
+margin-top:10px;
+font-size:14px;
+}
+
+/* LEGEND */
+#legend{
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+color:black;
+padding:12px;
+border-radius:8px;
+font-size:13px;
+z-index:1000;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+/* LEGEND COLORS */
+.legend-box{
+display:flex;
+align-items:center;
+margin-bottom:4px;
+}
+
+.legend-color{
+width:18px;
+height:18px;
+margin-right:6px;
+}

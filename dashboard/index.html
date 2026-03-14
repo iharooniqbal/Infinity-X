@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Global Data Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🌍 Global Data Dashboard</h1>
+
+<div class="top-controls">
+
+<select id="dataset">
+
+<option value="population">Population</option>
+<option value="gdp">GDP</option>
+<option value="wealth">Wealth</option>
+
+</select>
+
+<input type="text" id="search" placeholder="Search country">
+
+<button onclick="searchCountry()">Search</button>
+
+</div>
+
+</header>
+
+<div class="dashboard">
+
+<div id="map"></div>
+
+<div class="sidepanel">
+
+<h2>Country Info</h2>
+
+<div id="countryData">
+
+Click a country
+
+</div>
+
+</div>
+
+</div>
+
+<div id="legend"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
