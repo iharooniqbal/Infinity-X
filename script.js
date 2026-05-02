@@ -165,3 +165,4 @@ if (container) {
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
 }
+function runAI(){const p=document.getElementById('prompt');const r=document.getElementById('result');if(!p||!r)return;const q=p.value.trim();r.value=q?`AI Suggestion: ${q} can be improved using automation, analytics, and smart workflows.`:'Please enter a prompt.';}
